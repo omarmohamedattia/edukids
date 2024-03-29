@@ -1,0 +1,74 @@
+.h1{
+    font-family: sans-serif;
+    color: rgb(0, 0, 0);
+    margin-left: 10px;
+    margin-top: -10px;
+  }
+  .h2{
+     font-family: sans-serif;
+    color: rgb(252,129,129);
+    margin-top: -57px;
+    margin-left: 69px;
+  }
+  .signup{
+   margin-left: 94%;
+   cursor: pointer;
+   margin-top: -35px;
+   text-decoration: none;
+  }
+  .login{
+   margin-left: 90%;
+   cursor: pointer;
+   margin-top: -40px;
+   text-decoration: none;
+  }
+  a{
+   text-decoration: none;
+
+  }
+  .mid{
+   position: absolute;
+top: 35%;
+left: 46%;
+transform: translate(-50%, -50%);
+font-family: sans-serif;
+font-size: 40px;
+  }
+  .kids{
+   color: rgb(252,129,129);
+   font-family: sans-serif;
+   position: absolute;
+top: 35%;
+left: 62%;
+transform: translate(-50%, -50%);
+font-size: 40px;
+
+  }
+  .p{
+   color: rgb(0, 0, 0);
+   font-family: sans-serif;
+   position: absolute;
+top: 47%;
+left: 50%;
+transform: translate(-50%, -50%);
+font-size: 20px;
+}
+button{
+width: 120px;
+height: 50px;
+background-color: rgb(252,129,129);
+color: #ffffff;
+border-radius: 20px;
+border: none;
+position: absolute;
+top: 63%;
+left: 46%;
+transform: translate(-50%, -50%);
+cursor: pointer;
+}
+.jobs{
+margin-left: 150px;
+background-color: #ffffff;
+color: #000;
+border: #000 solid 1px ;
+}

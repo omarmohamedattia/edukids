@@ -1,0 +1,72 @@
+.nav{
+    background: rgb(248, 202, 202);
+    border-radius: 10px;
+    margin: 0;
+    padding: 0;
+    height: 50px;
+    width: 100%;
+}
+nav{
+    display: grid;
+    grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+    gap: 0px 30px;
+    position: absolute;
+    margin-top: -50px;
+    margin-left: 82%;
+}
+.user {
+    height: 30px;
+    border-radius: 15px;
+    cursor: pointer;
+}
+a {
+    text-decoration: none;
+    color: #000000;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+}
+.imgs {
+    height: 220px;
+    width: calc(45% - 20px); /* Adjust the width based on container and margin */
+    margin-bottom: 20px; /* Adjust margin between images */
+    border-radius: 15px; /* Adjust border radius */
+    margin-top: 200px;
+    cursor: pointer;
+    width: 175px;
+    margin-left: 100px;
+}
+.title{
+    font-size: 18px;
+    margin-top: 10px;
+    margin-left: 120px;
+}
+.img2{
+    height: 220px;
+    width: calc(45% - 20px); /* Adjust the width based on container and margin */
+    margin-bottom: 450px; /* Adjust margin between images */
+    border-radius: 15px; /* Adjust border radius */
+    margin-top: -310px;
+    cursor: pointer;
+    width: 175px;
+    margin-left: 550px;
+}
+.title2{
+    font-size: 18px;
+    margin-top: -420px;
+    margin-left: 580px;
+}
+.img3{
+    height: 220px;
+    width: calc(45% - 20px); /* Adjust the width based on container and margin */
+    margin-bottom: 450px; /* Adjust margin between images */
+    border-radius: 15px; /* Adjust border radius */
+    margin-top: -310px;
+    cursor: pointer;
+    width: 175px;
+    margin-left: 950px;
+}
+.title3{
+    font-size: 18px;
+    margin-top: -420px;
+    margin-left: 980px;
+}

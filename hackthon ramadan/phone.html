@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>edu kids </title>
+    <style>
+.nav {
+    background: rgb(248, 202, 202);
+    border-radius: 10px;
+    margin: 0;
+    padding: 0;
+    height: 50px;
+    width: 100%;
+}
+
+nav {
+    display: grid;
+    grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+    gap: 0px 30px;
+    position: absolute;
+    margin-top: -50px;
+    margin-left: 82%;
+}
+
+a {
+    text-decoration: none;
+    color: #000000;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+}
+
+.user {
+    height: 30px;
+    border-radius: 15px;
+    cursor: pointer;
+    margin-left: -20px;
+}
+h2,h3{
+margin-left: 30px;
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+img{
+
+    border-radius: 3%;
+    height: 600px;
+    margin-left: 175px;
+}
+h4{
+    margin-left: 75px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+button{
+    height: 35px;
+    width: 375px;
+    border-radius: 10px;
+    background: rgb(248, 202, 202);
+    cursor: pointer;
+    margin-left: 450px;
+}
+.Wallet{
+    font-size: 40px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    position: absolute;
+   margin-left: -525px;
+   margin-top: -10px;
+}
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <h1 >edu kids</h1>
+      <nav>
+         <a href="file:///O:/hackthon%20ramadan/home.html" >home</a>
+         <a href="file:///O:/hackthon%20ramadan/store.html">store</a><img class="user" src="https://th.bing.com/th/id/OIP.b61rHwfyvldBI6kQRI78jgHaHa?rs=1&pid=ImgDetMain">
+         <p class="Wallet">Wallet : $<span id="walletAmount">3000</span></p>
+
+    </nav>
+    </div>
+    <h2>samsung phone</h2>
+    <img src="O:\hackthon ramadan\New folder\samsung-1283938_1920.jpg" alt="">
+    <h3>samsung phone</h3>
+    <h4>wight : 192gm</h4>
+    <h4>storege : 64gb </h4>
+    <h4>color : black </h4>
+    <h4>rams : 4 </h4>
+    <h3>price : 250$</h3>
+    <button class="buy">buy</button>
+<script>
+// Function to get wallet amount from localStorage
+function getWalletAmount() {
+        var walletAmount = localStorage.getItem("walletAmount");
+        if (walletAmount === null) {
+            return 3000; // Set wallet amount to $3000 if not set
+        }
+        return parseInt(walletAmount);
+    }
+
+    // Function to update wallet amount in localStorage
+    function updateWalletAmount(amount) {
+        localStorage.setItem("walletAmount", amount);
+    }
+
+    // Get the wallet element
+    var wallet = document.getElementById("walletAmount");
+    // Set initial wallet amount
+    wallet.innerText = getWalletAmount();
+    
+    // Get all buy buttons
+    var buyButtons = document.querySelectorAll(".buy");
+    
+    // Loop through each buy button and add event listener
+    buyButtons.forEach(function(button) {
+        button.addEventListener("click", function() {
+            // Get current wallet amount
+            var currentAmount = parseInt(wallet.innerText);
+            
+            // Get the price of the item
+            var itemPrice = parseInt(button.previousElementSibling.innerText.split(":")[1].trim());
+            
+            // Check if there's enough balance
+            if (currentAmount >= itemPrice) {
+                // Deduct the item price from the wallet
+                var newAmount = currentAmount - itemPrice;
+                // Update the wallet amount displayed
+                wallet.innerText = newAmount;
+                // Update wallet amount in localStorage
+                updateWalletAmount(newAmount);
+                // Alert for successful purchase
+                alert("Purchase successful! Your new balance is: $" + newAmount);
+            } else {
+                // Alert for insufficient funds
+                alert("you don't  have money !");
+            }
+        });
+    });
+</script>
+</body>
+</html>
