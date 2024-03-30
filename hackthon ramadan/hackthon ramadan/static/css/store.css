@@ -1,0 +1,101 @@
+.nav {
+    background: rgb(248, 202, 202);
+    border-radius: 10px;
+    margin: 0;
+    padding: 0;
+    height: 50px;
+    width: 100%;
+}
+
+nav {
+    display: grid;
+    grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+    gap: 0px 30px;
+    position: absolute;
+    margin-top: -50px;
+    margin-left: 82%;
+}
+
+a {
+    text-decoration: none;
+    color: #000000;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+}
+
+.user {
+    height: 30px;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.snav {
+    background-color: rgb(231, 236, 240);
+    height: 70px;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.search {
+    border-radius: 15px;
+    height: 45px;
+    width: 250px;
+    margin-left: 40%;
+    margin-top: 15px;
+}
+
+i {
+    position: absolute;
+    cursor: pointer;
+    height: 50px;
+    margin-left: 2%;
+    margin-top: 32px;
+}
+
+select {
+    border-radius: 5px;
+    margin-left: 15%;
+}
+
+.imgs {
+    height: 220px;
+    width: calc(45% - 20px); /* Adjust the width based on container and margin */
+    margin-bottom: 20px; /* Adjust margin between images */
+    border-radius: 15px; /* Adjust border radius */
+    margin-top: 60px;
+    cursor: pointer;
+}
+
+.flex {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Aligns two images per row */
+}
+.item {
+    margin-bottom: 20px; /* Adjust margin between items */
+    text-align: center; /* Center the content */
+}
+
+.item h1 {
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.item p {
+    font-size: 14px;
+    color: #666;
+}
+button{
+    height: 25px;
+    width: 75px;
+    border-radius: 10px;
+    background: rgb(248, 202, 202);
+    cursor: pointer;
+}
+.Wallet{
+    font-size: 40px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    position: absolute;
+   margin-top: -4290px;
+}

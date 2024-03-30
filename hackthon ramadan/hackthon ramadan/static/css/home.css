@@ -1,0 +1,94 @@
+.nav{
+    background: rgb(248, 202, 202);
+    border-radius: 10px;
+    margin: 0;
+    padding: 0;
+    height: 50px;
+    width: 100%;
+}
+nav{
+    display: grid;
+    grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+    gap: 0px 30px;
+    position: absolute;
+    margin-top: -50px;
+    margin-left: 82%;
+}
+a{
+    text-decoration:none;
+    color: #000000;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+}
+.user{
+    height: 30px;
+    border-radius: 15px;
+    cursor: pointer;
+}
+.container{
+    padding: 0 8%;
+    width: 84%;
+    height: 100vh;
+}
+.container .Features{
+    text-align: center;
+    padding-top: 8%;
+    position: relative;
+    margin-bottom: 60px;
+    font-weight: 600;
+    margin-left: 25px;
+}
+.container .Features::after{
+    background: rgb(252, 129, 129);
+    width: 100px;
+    height: 05px;
+    position: absolute;
+    margin-bottom: -5px;
+    left: -50%;
+    transform: translate(-50%);
+}
+.rowy{
+  display: grid;
+grid-template-columns: repeat(2, minmax(250px, 2fr));
+grid-gap: 50px;
+}
+.service{
+text-align: center;
+padding: 25px 10px;
+font-size: 14px;
+border-radius: 5px;
+cursor: pointer;
+background: transparent;
+transition: 0.5s;
+}
+.service i{
+    font-size: xx-large;
+}
+.service:hover{
+    background: rgb(252, 129, 129);
+    color: #000;
+    transform: scale(1.05s);
+    
+}
+footer{
+background: rgb(252, 129, 129);
+height: 200px;
+border-radius: 15px;
+width: 100%;
+}
+.contact{
+    text-align: center;
+}
+.massage{
+    height: 45px;
+    width: 155px;
+    border-radius: 15px;
+    margin-left: 45%;
+
+}
+.send{
+    background: rgb(252, 129, 129);
+    border-radius: 15px;
+    color: #ffffff;
+    margin-left: 45%;
+}
