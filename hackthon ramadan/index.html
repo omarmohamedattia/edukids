@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>edu kids</title>
+    <style>
+       body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    font-family: 'Montserrat', sans-serif;
+    background-image: linear-gradient(to bottom right,rgb(248, 202, 202), rgb(10,213,240));
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.content {
+    background-color: white;
+    min-height: 400px;
+    width: 540px;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+input[type = "text"] {
+    font-size: medium;
+    margin-top: 50px;
+    margin-bottom: 10px;
+    width: 80%;
+    padding: 10px;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    outline: none;
+}
+
+button {
+    padding: 10px 20px;
+    background: rgb(248, 202, 202);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+
+li {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.delete-btn {
+    background-color: #ff0019;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <h1>edu kids To-Do List</h1>
+            <input type="text" id="task-input" placeholder="Add a new task...">
+            <button id="add-btn">Add Task</button>
+            <ul id="task-list"></ul>
+        </div>
+    </div>
+    <script>
+// Check if there are tasks saved in localStorage and display them
+document.addEventListener('DOMContentLoaded', () => {
+    const savedTasks = JSON.parse(localStorage.getItem('tasks'));
+    if (savedTasks) {
+        savedTasks.forEach(taskText => {
+            addTaskToList(taskText);
+        });
+    }
+});
+
+const taskInput = document.getElementById('task-input');
+const addBtn = document.getElementById('add-btn');
+const taskList = document.getElementById('task-list');
+
+// Function to add task to the list
+function addTaskToList(taskText) {
+    const listItem = document.createElement("li");
+    listItem.innerHTML = `
+        ${taskText}
+        <button class="delete-btn">Delete</button>
+    `;
+    taskList.appendChild(listItem);
+}
+
+// Function to save tasks to localStorage
+function saveTasks() {
+    const tasks = Array.from(taskList.children).map(li => li.textContent.trim());
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+}
+
+// Add task event listener
+addBtn.addEventListener('click', () => {
+    if (taskInput.value.trim() !== "") {
+        addTaskToList(taskInput.value.trim());
+        saveTasks();
+        taskInput.value = "";                        
+    }
+});
+
+// Delete task event listener
+taskList.addEventListener('click', (event) => {
+    if (event.target.classList.contains("delete-btn")) {
+        const listItem = event.target.parentElement;
+        taskList.removeChild(listItem);
+        saveTasks();
+    }
+});
+    </script>
+</body>
+</html>
